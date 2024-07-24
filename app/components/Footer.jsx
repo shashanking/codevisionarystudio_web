@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Marquee from "@/components/magicui/marquee";
 
 const Footer = () => {
   return (
@@ -14,19 +15,45 @@ const Footer = () => {
             <form action="#">
               <div className="grid grid-cols-12 gap-x-6">
                 <div className="col-span-3">
-                  <input type="text" name="cf_name" id="" className="form-control" placeholder="Your Name*" required />
+                  <input
+                    type="text"
+                    name="cf_name"
+                    id=""
+                    className="form-control"
+                    placeholder="Your Name*"
+                    required
+                  />
                 </div>
 
                 <div className="col-span-3">
-                  <input type="email" name="cf_email" id="" className="form-control" placeholder="Email ID*" required />
+                  <input
+                    type="email"
+                    name="cf_email"
+                    id=""
+                    className="form-control"
+                    placeholder="Email ID*"
+                    required
+                  />
                 </div>
 
                 <div className="col-span-3">
-                  <input type="tel" name="cf_phone" id="" className="form-control" placeholder="Phone Number" required />
+                  <input
+                    type="tel"
+                    name="cf_phone"
+                    id=""
+                    className="form-control"
+                    placeholder="Phone Number"
+                    required
+                  />
                 </div>
 
                 <div className="col-span-3">
-                  <select name="cf_subject" id="" className="form-control h-[3.625rem]" required>
+                  <select
+                    name="cf_subject"
+                    id=""
+                    className="form-control h-[3.625rem]"
+                    required
+                  >
                     <option value="" selected disabled>
                       Subject
                     </option>
@@ -38,7 +65,10 @@ const Footer = () => {
               </div>
 
               <div className="mt-20">
-                <button type="submit" className="btn btn-dark submit-btn w-full text-center">
+                <button
+                  type="submit"
+                  className="btn btn-dark submit-btn w-full text-center"
+                >
                   Submit
                 </button>
               </div>
@@ -51,12 +81,21 @@ const Footer = () => {
           <div className="col-span-6 pr-[9.75rem]">
             <div className="mb-7">
               <Link href="/">
-                <Image src="/images/footer-logo.png" width="240" height="64" alt="footer logo" />
+                <Image
+                  src="/images/footer-logo.png"
+                  width="240"
+                  height="64"
+                  alt="footer logo"
+                />
               </Link>
             </div>
 
             <div className="content-box">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce mollis erat ac ex bibendum, nec vulputate lorem posuere. Nunc mollis turpis eget nibh sollicitudin, nec semper sem facilisis.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                mollis erat ac ex bibendum, nec vulputate lorem posuere. Nunc
+                mollis turpis eget nibh sollicitudin, nec semper sem facilisis.
+              </p>
             </div>
           </div>
 
@@ -67,31 +106,46 @@ const Footer = () => {
             <nav>
               <ul className="flex flex-col gap-y-3">
                 <li>
-                  <Link href="/" className="text-white block hover:text-gray-200">
+                  <Link
+                    href="/"
+                    className="text-white block hover:text-gray-200"
+                  >
                     About Us
                   </Link>
                 </li>
 
                 <li>
-                  <Link href="/" className="text-white block hover:text-gray-200">
+                  <Link
+                    href="/"
+                    className="text-white block hover:text-gray-200"
+                  >
                     Our Services
                   </Link>
                 </li>
 
                 <li>
-                  <Link href="/" className="text-white block hover:text-gray-200">
+                  <Link
+                    href="/"
+                    className="text-white block hover:text-gray-200"
+                  >
                     Portfolio
                   </Link>
                 </li>
 
                 <li>
-                  <Link href="/" className="text-white block hover:text-gray-200">
+                  <Link
+                    href="/"
+                    className="text-white block hover:text-gray-200"
+                  >
                     Blogs
                   </Link>
                 </li>
 
                 <li>
-                  <Link href="/" className="text-white block hover:text-gray-200">
+                  <Link
+                    href="/"
+                    className="text-white block hover:text-gray-200"
+                  >
                     Contact Us
                   </Link>
                 </li>
@@ -109,7 +163,9 @@ const Footer = () => {
               </li>
               <li>Address, Kolkata, West Bengal 700040</li>
               <li>
-                <a href="mailto:Codevisionary@gmail.com">Codevisionary@gmail.com</a>
+                <a href="mailto:Codevisionary@gmail.com">
+                  Codevisionary@gmail.com
+                </a>
               </li>
             </ul>
           </div>
@@ -118,15 +174,18 @@ const Footer = () => {
 
       <div className="pt-[3.75rem] pb-16 overflow-hidden">
         {/* Sliding Text */}
-        <div className="sliding-heading flex items-center border-t border-white border-b py-12">
-          <div className="flex items-center gap-x-14 scrolling-right-1">
-            <span>Code Visionary Studios</span>
-            <Image src="/images/sliding-heading-icon.png" width="53" height="53" alt="shape" />
-          </div>
-
-          <div className="flex items-center gap-x-14 scrolling-right-2">
-            <span>Code Visionary Studios</span>
-          </div>
+        <div className="sliding-heading flex items-center border-t border-white border-b ">
+          <Marquee>
+            <div className="flex items-center gap-x-14 pr-5">
+              <span>Code Visionary Studios</span>
+              <Image
+                src="/images/sliding-heading-icon.png"
+                width="53"
+                height="53"
+                alt="shape"
+              />
+            </div>
+          </Marquee>
         </div>
       </div>
     </footer>

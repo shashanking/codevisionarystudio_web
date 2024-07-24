@@ -212,40 +212,12 @@ tbody tr {
   box-shadow: 0 -4px 8px rgba(137, 226, 255, 0.2);
 }
 
-.scrolling-right-1 {
-  animation: scrolling-right-1 10s linear infinite;
-}
-
-.scrolling-right-2 {
-  animation: scrolling-right-2 10s linear infinite;
-  /* animation-delay: 5s; */
-}
-
 .sliding-heading span {
   @apply text-[8rem] inline-block whitespace-nowrap uppercase font-heading;
   -webkit-text-stroke-color: #fff;
   -webkit-text-stroke-width: 1px;
   -webkit-text-fill-color: transparent;
-}
-
-@keyframes scrolling-right-1 {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scrolling-right-2 {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
+  line-height: 1;
 }
 
 .footer-contact-form .submit-btn {
