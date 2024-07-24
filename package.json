@@ -10,11 +10,14 @@
   },
   "dependencies": {
     "@next/font": "^14.2.5",
-    "@splinetool/react-spline": "github:splinetool/react-spline",
+    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^1.9.2",
+    "framer-motion": "^11.3.11",
     "next": "14.2.5",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.2.1"
+    "react-icons": "^5.2.1",
+    "swiper": "^11.1.5"
   },
   "devDependencies": {
     "eslint": "^8",

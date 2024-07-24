@@ -150,6 +150,19 @@ tbody tr {
 }
 
 /* --- Header --- */
+.site-header {
+  animation: slideDown 0.6s ease-in-out;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -8rem;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 .site-header.site-header--shrinked {
   @apply py-4;
   background: rgba(255, 255, 255, 0.15);
@@ -171,7 +184,7 @@ tbody tr {
 
 .site-header__btn--cta .default-text {
   @apply translate-y-0 rotate-0 transition-all duration-500;
-} 
+}
 
 .site-header__btn--cta:hover .default-text {
   @apply translate-y-20 rotate-[-20deg];
@@ -193,7 +206,6 @@ tbody tr {
   @apply -translate-x-0;
 }
 
-
 /* --- Footer --- */
 .site-footer {
   background: linear-gradient(#e44f58, #bf242d, #5f0006);
@@ -201,12 +213,12 @@ tbody tr {
 }
 
 .scrolling-right-1 {
-  animation: scrolling-right-1 20s linear infinite;
+  animation: scrolling-right-1 10s linear infinite;
 }
 
 .scrolling-right-2 {
-  animation: scrolling-right-2 20s linear infinite;
-  animation-delay: 10s;
+  animation: scrolling-right-2 10s linear infinite;
+  /* animation-delay: 5s; */
 }
 
 .sliding-heading span {
@@ -218,21 +230,21 @@ tbody tr {
 
 @keyframes scrolling-right-1 {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(100%);
   }
 
   100% {
-    transform: translateX(0%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes scrolling-right-2 {
   0% {
-    transform: translateX(0%);
+    transform: translateX(100%);
   }
 
   100% {
-    transform: translateX(200%);
+    transform: translateX(-100%);
   }
 }
 
@@ -247,6 +259,10 @@ tbody tr {
 /* --- Page - Home --- */
 .hero-section .content-box h1 {
   @apply mb-12 text-[6rem] leading-[1.15];
+}
+
+.spline-watermark {
+  display: none !important;
 }
 
 .gradient-text {
@@ -288,7 +304,7 @@ tbody tr {
 }
 
 .why-us-block .content-box h3 {
-    @apply font-base mb-3 text-2xl;
+  @apply font-base mb-3 text-2xl;
 }
 
 .team-grid li {
@@ -302,5 +318,10 @@ tbody tr {
 .team-card:hover img {
   filter: grayscale(0);
 }
+
+.testimonial-carousel .swiper-slide {
+  width: 320px !important;
+}
+
 /* --- Page - About Us --- */
 /* --- Page - Contact Us --- */

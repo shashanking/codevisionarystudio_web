@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
+
 const Header = () => {
   const headerEl = useRef();
 
@@ -36,7 +37,7 @@ const Header = () => {
                 <span className="default-text">Contact Us</span>
                 <span className="hovered-text">Don't be shy</span>
                 <div className="shape-box">
-                <FaArrowRight />
+                  <FaArrowRight />
                 </div>
               </Link>
             </div>

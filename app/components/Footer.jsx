@@ -126,7 +126,6 @@ const Footer = () => {
 
           <div className="flex items-center gap-x-14 scrolling-right-2">
             <span>Code Visionary Studios</span>
-            <Image src="/images/sliding-heading-icon.png" width="53" height="53" alt="shape" />
           </div>
         </div>
       </div>

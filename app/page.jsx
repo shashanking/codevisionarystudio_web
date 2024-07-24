@@ -1,7 +1,9 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import TeamCard from "./components/TeamCard";
-// import Spline from '@splinetool/react-spline';
+import TestimonialCarousel from "./components/TestimonialCarousel";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const teamMembers = [
@@ -33,14 +35,17 @@ export default function Home() {
 
   return (
     <main>
-      <section className="hero-section h-screen">
-        <div class="container h-full">
+      <section className="hero-section h-screen relative">
+        <div class="container h-full relative z-20">
           <div className="flex flex-col h-full justify-center text-center">
             <div className="content-box mb-[6.25rem] text-2xl">
+              <motion.div initial={{ y: -100, transitionDuration: 3000, transitionDelay: 10000 }} whileInView={{ y: 0}}>
               <h1>
                 Transforming Ideas into<br></br>
                 <span className="gradient-text">Digital Reality</span>
               </h1>
+              </motion.div>
+
               <p>Web Design, App Development, Branding & Marketing Services</p>
             </div>
             <div>
@@ -51,9 +56,9 @@ export default function Home() {
           </div>
         </div>
 
-        {/* <div>
-          <Spline scence="https://my.spline.design/webbg-2027e265eca50f4533c337593fa82e2a/" />
-        </div> */}
+        <div className="absolute top-0 left-0 right-0 bottom-0 z-10">
+          <iframe src="https://my.spline.design/webbg-2027e265eca50f4533c337593fa82e2a" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
       </section>
 
       <section className="services-section pt-[4.75rem] pb-[3.625rem]">
@@ -211,7 +216,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="testimonial-section"></section>
+      <section className="testimonial-section pty-[18.125rem]">
+        <div className="container">
+          <div className="grid grid-cols-12 gap-x-6 items-center">
+            <div className="col-span-6 -lg:col-span-12">
+              <TestimonialCarousel />
+            </div>
+
+            <div className="col-span-6 pl-[8.5rem] -lg:col-span-12">
+              <div className="flex items-center text-center gap-x-6 mb-12">
+                <Image src="/images/subheading-icon.png" width="12" height="12" alt="subheading-icon" />
+                <h4 className="uppercase">Testimonials</h4>
+              </div>
+
+              <div className="content-box mb-12">
+                <h2>What Our Clients Say</h2>
+                <p>Discover how Code Visionary Studios has made a difference for our clients. Our testimonials showcase the positive impact of our web design, app development, branding, and digital marketing services.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
