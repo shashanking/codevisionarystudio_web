@@ -236,39 +236,42 @@ tbody tr {
 .spline-watermark {
   display: none !important;
 }
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
 
+  50% {
+    background-position: 100% 25%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
 .gradient-text {
-  animation: gradient-text-animation 6s ease infinite;
+  background-image: repeating-linear-gradient(
+    90deg,
+    #f23232,
+    #fea656,
+    #07ac7a,
+    #0cd69a,
+    #472ed4,
+    #5220c7,
+    #f2c532,
+    #56fe64,
+    #f23232,
+    #fea656
+  );
+  text-align: center;
+  background-size: 1600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow 25s ease-in-out infinite;
 }
 
 .bg-bottom-center {
   background-position: bottom center;
-}
-
-@keyframes gradient-text-animation {
-  0% {
-    background: -webkit-linear-gradient(0deg, #f23232, #fea656);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  33% {
-    background: -webkit-linear-gradient(0deg, #07ac7a, #0cd69a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  66% {
-    background: -webkit-linear-gradient(0deg, #472ed4, #5220c7);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  100% {
-    background: -webkit-linear-gradient(0deg, #f2c532, #56fe64);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 }
 
 .services-item__btn--more {
