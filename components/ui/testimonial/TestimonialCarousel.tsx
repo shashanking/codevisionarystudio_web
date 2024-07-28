@@ -103,7 +103,7 @@ const TestimonialCarousel = () => {
     <div
       className="testimonial-carousel"
       style={{
-        width: "80%",
+        width: "100%",
         height: "500px",
         margin: "0 auto",
         userSelect: "none",
@@ -114,7 +114,7 @@ const TestimonialCarousel = () => {
       <Carousel
         slides={slides}
         goToSlide={goToSlideIndex}
-        offsetRadius={5}
+        offsetRadius={2}
         showNavigation={false}
         animationConfig={config.gentle}
         goToSlideDelay={1}
