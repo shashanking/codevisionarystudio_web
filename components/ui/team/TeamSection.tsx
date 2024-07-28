@@ -1,30 +1,31 @@
 import Image from "next/image";
 import { TeamCard } from "./TeamCard";
+import { assets } from "@/assets";
 
 const teamMembers = [
   {
     id: 1,
-    thumbnail: "/images/team-1.jpg",
+    thumbnail: assets.vikashJhaPortrait,
     title: "Vikash Jha",
-    designation: "Co Founder, UI/UX Designer",
+    designation: "Co-founder, CEO",
   },
   {
     id: 2,
-    thumbnail: "/images/team-1.jpg",
-    title: "Vikash Jha",
-    designation: "Co Founder, UI/UX Designer",
+    thumbnail: assets.sahilBiswasPortrait,
+    title: "Sahil Biswas",
+    designation: "Co-founder, UI/UX Designer",
   },
   {
     id: 3,
-    thumbnail: "/images/team-1.jpg",
-    title: "Vikash Jha",
-    designation: "Co Founder, UI/UX Designer",
+    thumbnail: assets.shashankSinghPortrait,
+    title: "Shashank Singh",
+    designation: "Co-founder, Lead Developer",
   },
   {
     id: 4,
-    thumbnail: "/images/team-1.jpg",
-    title: "Vikash Jha",
-    designation: "Co Founder, UI/UX Designer",
+    thumbnail: assets.sayanChoudhuryPortrait,
+    title: "Sayan Choudhury",
+    designation: "Co-founder, Lead Marketing Specialist",
   },
 ];
 
@@ -59,7 +60,7 @@ export const TeamSection: React.FC = () => {
                 key={member.id}
                 title={member.title}
                 designation={member.designation}
-                thumbnail={member.thumbnail}
+                thumbnail={member.thumbnail.src}
               />
             );
           })}
