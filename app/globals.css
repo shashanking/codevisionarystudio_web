@@ -300,3 +300,25 @@ tbody tr {
 
 /* --- Page - About Us --- */
 /* --- Page - Contact Us --- */
+
+.swiper {
+  width: 380px;
+  height: 500px;
+}
+
+.swiper-slide {
+  background: #ffffff10;
+}
+.swiper-slide .card-content {
+  opacity: 0;
+}
+.swiper-slide-visible .card-content {
+  opacity: 1;
+}
+.swiper-slide-visible {
+  background: #ffffff90;
+}
+
+.swiper-slide {
+  border-radius: 18px;
+}

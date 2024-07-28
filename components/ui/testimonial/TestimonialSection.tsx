@@ -1,5 +1,5 @@
 import Image from "next/image";
-import TestimonialCarousel from "./TestimonialCarousel";
+import { TestimonialCarousel } from "./TestimonialCarousel";
 
 export const TestimonialSection: React.FC = () => {
   return (

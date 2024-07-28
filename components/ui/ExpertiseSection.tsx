@@ -53,7 +53,10 @@ export const ExpertiseSection: React.FC = () => {
                 width="492"
                 height="331"
                 alt="web application"
-                className="absolute top-1/2 right-0 -translate-y-[50%] z-20 transition-all duration-500 group-hover:scale-110"
+                className="absolute top-1/2 right-0 -translate-y-[50%] z-20 transition-all duration-500 group-hover:scale-[1.05]"
+                style={{
+                  transformOrigin: "right bottom",
+                }}
               />
               <Image
                 src="/images/web-design-ring.png"
@@ -61,6 +64,9 @@ export const ExpertiseSection: React.FC = () => {
                 height="331"
                 alt="web application ring"
                 className="block absolute right-0 bottom-0 transition-all duration-500 z-10 group-hover:scale-[1.2]"
+                style={{
+                  transformOrigin: "right bottom",
+                }}
               />
             </div>
           </div>
@@ -128,13 +134,19 @@ export const ExpertiseSection: React.FC = () => {
                 height="331"
                 alt="web application"
                 className="absolute left-1/2 bottom-0 -translate-x-[50%] z-20 transition-all duration-500 group-hover:scale-110"
+                style={{
+                  transformOrigin: "left right",
+                }}
               />
               <Image
                 src="/images/digital-marketing-ring.png"
                 width="299"
                 height="409"
                 alt="web application ring"
-                className="block absolute right-0 top-0 bottom-0 transition-all duration-500 z-10 group-hover:scale-[1.2]"
+                className="block absolute right-0 top-0 bottom-0 transition-all duration-500 z-10 group-hover:scale-[1.1]"
+                style={{
+                  transformOrigin: "left right",
+                }}
               />
             </div>
           </div>

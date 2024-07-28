@@ -2,14 +2,7 @@ import Image from "next/image";
 
 export const TestimonialCard = () => {
   return (
-    <div
-      className=" rounded-2xl px-5 py-7 "
-      style={{
-        width: "382px",
-        height: "496px",
-        background: "#FFFFFF33",
-      }}
-    >
+    <div className=" rounded-2xl px-5 py-7 card-content">
       <div className="flex items-center gap-x-3">
         <Image
           src="/images/team-1.jpg"
