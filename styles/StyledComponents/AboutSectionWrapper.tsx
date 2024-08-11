@@ -38,4 +38,30 @@ export const AboutSectionWrapper = styled(Box)`
       color: ${primaryColors.color192527};
     }
   }
+  .about_gallery {
+    margin-top: 50px;
+    position: relative;
+    min-height: calc(100vh - 450px);
+    .cmn_img {
+      box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.15);
+      border-radius: 16px;
+      position: absolute;
+      &.img2 {
+        left: 0;
+        top: 0;
+      }
+      &.img7 {
+        left: 50%;
+        top: -50px;
+      }
+      &.img5 {
+        left: 20%;
+        top: 300px;
+      }
+      &.img1 {
+        right: 0;
+        top: 300px;
+      }
+    }
+  }
 `;

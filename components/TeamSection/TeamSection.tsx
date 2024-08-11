@@ -3,10 +3,14 @@ import { TeamWrapper } from "@/styles/StyledComponents/TeamWrapper";
 import { Container, Grid } from "@mui/material";
 import CommonHeading from "../CommonHeading/CommonHeading";
 import TeamCard from "./TeamCard";
+import clsx from "clsx";
 
-const TeamSection = () => {
+type TeamSectionProps = {
+  className?: string;
+};
+const TeamSection = ({ className }: TeamSectionProps) => {
   return (
-    <TeamWrapper className="cmn_gap">
+    <TeamWrapper className={clsx("cmn_gap", className)}>
       <Container fixed>
         <CommonHeading
           sectionNameDots

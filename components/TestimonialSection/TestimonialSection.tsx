@@ -2,10 +2,14 @@ import { TestimonialSectionWrapper } from "@/styles/StyledComponents/Testimonial
 import { Box, Container, Grid } from "@mui/material";
 import CommonHeading from "../CommonHeading/CommonHeading";
 import TestimonialCarousel from "./TestimonialCarousel";
+import clsx from "clsx";
 
-const TestimonialSection = () => {
+type TestimonialSectionProps = {
+  className?: string;
+};
+const TestimonialSection = ({ className }: TestimonialSectionProps) => {
   return (
-    <TestimonialSectionWrapper className="cmn_gap">
+    <TestimonialSectionWrapper className={clsx("cmn_gap", className)}>
       <Container fixed>
         <Grid container spacing={3} alignItems="center">
           <Grid item xs={12} md={6}>
