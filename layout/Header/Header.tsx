@@ -76,6 +76,12 @@ export default function Header() {
     router.push("/login");
   };
 
+  const onClickContactUsButton = React.useCallback(() => {
+    document.getElementById("footer")?.scrollIntoView({
+      behavior: "smooth"
+    });
+  }, []);
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography variant="h6" sx={{ my: 2 }}>
@@ -195,7 +201,10 @@ export default function Header() {
                 </Typography>
                 Contact us
               </CustomButtonPrimary> */}
-              <Button className="site-header__btn--cta">
+              <Button
+                className="site-header__btn--cta"
+                onClick={onClickContactUsButton}
+              >
                 <Typography variant="body1" className="default-text">
                   Contact Us
                 </Typography>

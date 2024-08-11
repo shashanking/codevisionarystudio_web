@@ -3,6 +3,7 @@ import { whyListItem } from "@/json/mock/demo.mock";
 import { WhySectionWrapper } from "@/styles/StyledComponents/WhySectionWrapper";
 import {
   Box,
+  BoxProps,
   Container,
   Grid,
   List,
@@ -11,10 +12,11 @@ import {
 } from "@mui/material";
 import Image from "next/image";
 import CommonHeading from "../CommonHeading/CommonHeading";
+import clsx from "clsx";
 
-const WhySection = () => {
+const WhySection:React.FC<BoxProps> = ({className,...props}) => {
   return (
-    <WhySectionWrapper className="cmn_gap">
+    <WhySectionWrapper className={clsx("cmn_gap",className)} {...props}>
       <Container fixed>
         <Grid container spacing={2} className="why_row">
           <Grid item md={6} xs={12}>
@@ -23,8 +25,36 @@ const WhySection = () => {
                 <Image
                   src={assest.why_us_col_img}
                   alt="why_us_col_img"
-                  width={491}
+                  width={563}
                   height={738}
+                />
+                  <Image
+                  src={assest.mbl_img1}
+                  alt="mbl_img1"
+                  className="mbl_img1"
+                  width={250}
+                  height={117}
+                />
+                  <Image
+                  src={assest.mbl_img2}
+                  alt="mbl_img2"
+                  className="mbl_img2"
+                  width={250}
+                  height={152}
+                />
+                  <Image
+                  src={assest.mbl_img3}
+                  alt="mbl_img3"
+                  className="mbl_img3"
+                  width={250}
+                  height={243}
+                />
+                  <Image
+                  src={assest.mbl_img4}
+                  alt="mbl_img4"
+                  className="mbl_img4"
+                  width={250}
+                  height={668}
                 />
               </figure>
             </Box>

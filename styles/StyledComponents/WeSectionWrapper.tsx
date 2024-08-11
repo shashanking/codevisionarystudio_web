@@ -26,5 +26,6 @@ export const WeSectionWrapper = styled(Box)`
     left: 0;
     transform: translateY(-30%);
     z-index: -1;
+    opacity: 0;
   }
 `;

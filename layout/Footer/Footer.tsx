@@ -19,6 +19,11 @@ import { Box } from "@mui/system";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Marquee from "react-fast-marquee";
+import { Controller, useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { toast } from "sonner";
+import axios from "axios";
 
 const FooterWrap = styled(Box)`
   background: linear-gradient(#e44f58, #bf242d, #5f0006);
@@ -151,28 +156,20 @@ const FooterWrap = styled(Box)`
   }
 `;
 
-const navItems = [
-  {
-    name: "home",
-    route: "/"
-  },
-  {
-    name: "About",
-    route: "/about"
-  },
-  {
-    name: "Products",
-    route: "/products"
-  },
-  {
-    name: "Package",
-    route: "/package"
-  },
-  {
-    name: "Contact",
-    route: "/contact"
+const footerContactFormSchema = yup.object({
+  name: yup.string().required().label("Name"),
+  email: yup.string().email().required().label("Email"),
+  phone: yup.number().min(10).label("Phone number"),
+  subject: yup.string().label("Subject")
+});
+
+type FooterSchemaData = yup.InferType<typeof footerContactFormSchema>;
+
+const InputFieldCommonStyled = styled(InputFieldCommon)`
+  .Mui-error {
+    color: white !important;
   }
-];
+`;
 
 const Footer = () => {
   const navItems = [
@@ -198,8 +195,22 @@ const Footer = () => {
     }
   ];
   const router = useRouter();
+  const { control, handleSubmit } = useForm<FooterSchemaData>({
+    resolver: yupResolver(footerContactFormSchema)
+  });
+
+  const onSubmit = async (values: FooterSchemaData) => {
+    // const mailText = `Name: ${values.name}\n  Email: ${values.email}\nPhone:${values.phone} \nSubject: ${values.subject}`;
+    const response = await axios("/api/send-email");
+    if (response?.status === 200) {
+      toast.success("Application Submitted Successfully.");
+    } else {
+      toast.error("Failed To send application.");
+    }
+  };
+
   return (
-    <FooterWrap>
+    <FooterWrap id="footer">
       <Container fixed>
         <Box className="ftr_top">
           <Typography variant="h2">Contact Us</Typography>
@@ -208,39 +219,87 @@ const Footer = () => {
             <Grid container spacing={3}>
               <Grid item md={3} xs={12}>
                 <Box className="ftr_fld">
-                  <InputFieldCommon
-                    placeholder="Your Name*"
-                    required
-                    type="text"
+                  <Controller
+                    name="name"
+                    control={control}
+                    render={({ field, fieldState: { error } }) => {
+                      return (
+                        <InputFieldCommonStyled
+                          placeholder="Your Name*"
+                          required
+                          type="text"
+                          autoComplete="name"
+                          {...field}
+                          error={Boolean(error?.message)}
+                          helperText={error?.message}
+                        />
+                      );
+                    }}
                   />
                 </Box>
               </Grid>
               <Grid item md={3} xs={12}>
                 <Box className="ftr_fld">
-                  <InputFieldCommon
-                    placeholder="Email ID*"
-                    required
-                    type="email"
+                  <Controller
+                    name="email"
+                    control={control}
+                    render={({ field, fieldState: { error } }) => {
+                      return (
+                        <InputFieldCommonStyled
+                          placeholder="Email*"
+                          required
+                          type="email"
+                          autoComplete="email"
+                          {...field}
+                          error={Boolean(error?.message)}
+                          helperText={error?.message}
+                        />
+                      );
+                    }}
                   />
                 </Box>
               </Grid>
               <Grid item md={3} xs={12}>
                 <Box className="ftr_fld">
-                  <InputFieldCommon
-                    placeholder="Phone Number"
-                    required
-                    type="tel"
+                  <Controller
+                    name="phone"
+                    control={control}
+                    render={({ field, fieldState: { error } }) => {
+                      return (
+                        <InputFieldCommonStyled
+                          placeholder="Phone Number"
+                          required
+                          type="tel"
+                          autoComplete="phone"
+                          {...field}
+                          error={Boolean(error?.message)}
+                          helperText={error?.message}
+                        />
+                      );
+                    }}
                   />
                 </Box>
               </Grid>
               <Grid item md={3} xs={12}>
                 <Box className="ftr_fld">
-                  <CustomSelect initialValue="Subject">
-                    <MenuItem value="">Subject</MenuItem>
-                    <MenuItem value="Subject1">Subject1</MenuItem>
-                    <MenuItem value="Subject2">Subject2</MenuItem>
-                    <MenuItem value="Subject3">Subject3</MenuItem>
-                  </CustomSelect>
+                  <Controller
+                    control={control}
+                    name="subject"
+                    render={({ field: { ref, ...fieldProps } }) => {
+                      return (
+                        <CustomSelect
+                          defaultPlaceholder="Subject"
+                          {...fieldProps}
+                          inputRef={ref}
+                        >
+                          <MenuItem value="Subject">Subject</MenuItem>
+                          <MenuItem value="Subject1">Subject1</MenuItem>
+                          <MenuItem value="Subject2">Subject2</MenuItem>
+                          <MenuItem value="Subject3">Subject3</MenuItem>
+                        </CustomSelect>
+                      );
+                    }}
+                  />
                 </Box>
               </Grid>
             </Grid>
@@ -249,6 +308,7 @@ const Footer = () => {
               color="success"
               variant="contained"
               className="submit_btn"
+              onClick={handleSubmit(onSubmit)}
             >
               Submit
             </CustomButtonPrimary>

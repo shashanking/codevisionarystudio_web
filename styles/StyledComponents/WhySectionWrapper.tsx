@@ -3,6 +3,8 @@ import { montserrat } from "@/themes/_muiTheme";
 import { Box, styled } from "@mui/material";
 
 export const WhySectionWrapper = styled(Box)`
+  display: flex;
+  align-items: center;
   .why_row {
     align-items: center;
 
@@ -25,6 +27,13 @@ export const WhySectionWrapper = styled(Box)`
       }
       .whyMobile_img {
         text-align: center;
+        position: relative;
+        .mbl_img1,
+        .mbl_img2,
+        .mbl_img3,
+        .mbl_img4 {
+          position: absolute;
+        }
       }
     }
     .why_list {

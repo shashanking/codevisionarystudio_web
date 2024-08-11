@@ -1,12 +1,14 @@
 import { BannerWrapper } from "@/styles/StyledComponents/BannerWrapper";
 import CustomButtonPrimary from "@/ui/CustomButtons/CustomButtonPrimary";
 import { Container, Typography } from "@mui/material";
-import Box from "@mui/material/Box";
+import Box, { BoxProps } from "@mui/material/Box";
+import clsx from "clsx";
 import { motion } from "framer-motion";
+import React from "react";
 
-const BannerSection = () => {
+const BannerSection:React.FC<BoxProps> = ({className,...props}) => {
   return (
-    <BannerWrapper>
+    <BannerWrapper className={clsx("",className)} {...props} {...props}>
       <Box className="iframeWrapper">
         <iframe
           src="https://my.spline.design/webbg-2027e265eca50f4533c337593fa82e2a"

@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { IconButton, MenuItem } from "@mui/material";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import Select, { SelectProps } from "@mui/material/Select";
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import DropDownIcon from "../Icons/DropdownIcon";
 
 const CustomSelectWrapper = styled(Select)`
@@ -42,50 +42,52 @@ const CustomSelectWrapper = styled(Select)`
   }
 `;
 interface CustomSelectProps extends SelectProps {
-  initialValue: string;
+  defaultPlaceholder?: string;
 }
-const CustomSelect: React.FC<CustomSelectProps & SelectProps> = ({
-  initialValue,
-  ...props
-}) => {
-  const MenuProps = {
-    PaperProps: {
-      style: {
-        width: "auto"
-        // backgroundColor:"#000"
-      }
+
+const MenuProps = {
+  PaperProps: {
+    style: {
+      width: "auto"
+      // backgroundColor:"#000"
     }
-  };
-
-  const [value, setValue] = useState("");
-
-  const handleChange = (event: any) => {
-    setValue(event.target.value);
-  };
-
-  return (
-    <CustomSelectWrapper
-      displayEmpty
-      input={<OutlinedInput />}
-      IconComponent={(props) => {
-        return (
-          <IconButton {...props}>
-            <DropDownIcon />
-          </IconButton>
-        );
-      }}
-      MenuProps={MenuProps}
-      inputProps={{ "aria-label": "Without label" }}
-      value={value}
-      onChange={handleChange}
-      {...props}
-    >
-      <MenuItem value="" className="menu_item">
-        {initialValue}
-      </MenuItem>
-      {props.children}
-    </CustomSelectWrapper>
-  );
+  }
 };
+
+const CustomSelect: React.FC<CustomSelectProps & SelectProps> = forwardRef(
+  ({ defaultPlaceholder, ...props }, ref) => {
+    const isShowingDefaultPlaceholder =
+      typeof defaultPlaceholder !== "undefined";
+    return (
+      <CustomSelectWrapper
+        displayEmpty={isShowingDefaultPlaceholder}
+        ref={ref}
+        defaultValue={isShowingDefaultPlaceholder ? "" : undefined}
+        input={<OutlinedInput />}
+        IconComponent={(props) => {
+          return (
+            <IconButton {...props}>
+              <DropDownIcon />
+            </IconButton>
+          );
+        }}
+        MenuProps={MenuProps}
+        {...props}
+      >
+        {defaultPlaceholder ? (
+          <MenuItem
+            value=""
+            disabled
+            sx={{ display: "none" }}
+            className="menu_item"
+          >
+            {defaultPlaceholder}
+          </MenuItem>
+        ) : null}
+        {props.children}
+      </CustomSelectWrapper>
+    );
+  }
+);
 
 export default CustomSelect;

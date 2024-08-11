@@ -1,21 +1,24 @@
 import assest from "@/json/assest";
 import { ServiceSectionWrapper } from "@/styles/StyledComponents/ServiceSectionWrapper";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import { Box, BoxProps, Button, Container, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import CommonHeading from "../CommonHeading/CommonHeading";
+import clsx from "clsx";
 
-const ServiceSection = () => {
+
+const ServiceSection:React.FC<BoxProps> = ({className,...props}) => {
   return (
-    <ServiceSectionWrapper className="cmn_gap">
+    <ServiceSectionWrapper className={clsx("cmn_gap",className)} {...props}>
       <Container fixed>
         <CommonHeading
           sectionNameDots
           sectionName="Our services"
           title="Our Expertise"
           description="Discover the comprehensive range of IT services we offer at Code Visionary Studios. From web design and app development to branding and digital marketing, our expert team delivers innovative solutions that drive your business forward."
+          className="cmn_heading"
         />
-
-        <Grid container spacing={3}>
+      <Box className="gallery">
+      <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <Box className="serviceBox">
               <Box className="serviceBox_cnt">
@@ -154,6 +157,8 @@ const ServiceSection = () => {
             </Box>
           </Grid>
         </Grid>
+      </Box>
+    
       </Container>
     </ServiceSectionWrapper>
   );

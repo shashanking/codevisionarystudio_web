@@ -1,12 +1,13 @@
 import assest from "@/json/assest";
 import { WeSectionWrapper } from "@/styles/StyledComponents/WeSectionWrapper";
-import { Container } from "@mui/material";
+import { BoxProps, Container } from "@mui/material";
 import Image from "next/image";
 import CommonHeading from "../CommonHeading/CommonHeading";
+import clsx from "clsx";
 
-const WeSection = () => {
+const WeSection:React.FC<BoxProps> = ({className,...props}) => {
   return (
-    <WeSectionWrapper className="cmn_gap">
+    <WeSectionWrapper className={clsx("cmn_gap",className)} {...props}>
       <Image
         src={assest.weLyr}
         alt="weLyr"

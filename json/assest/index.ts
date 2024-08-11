@@ -23,5 +23,9 @@ export default {
   mobile_app_dev_block_bg: "/assets/images/mobile-app-dev-block-bg.png",
   team1: "/assets/images/team-1.jpg",
   why_us_col_img: "/assets/images/why-us-col-img1.png",
-  weLyr: "/assets/images/weLyr.png"
+  weLyr: "/assets/images/weLyr.png",
+  mbl_img1:"/assets/images/mbl_img1.png",
+  mbl_img2:"/assets/images/mbl_img2.png",
+  mbl_img3:"/assets/images/mbl_img3.png",
+  mbl_img4:"/assets/images/mbl_img4.png",
 };

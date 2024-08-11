@@ -1,10 +1,11 @@
 import { ProtfolioSectionWrapper } from "@/styles/StyledComponents/ProtfolioSectionWrapper";
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, BoxProps, Button, Container, Typography } from "@mui/material";
 import CommonHeading from "../CommonHeading/CommonHeading";
+import clsx from "clsx";
 
-const ProtfolioSection = () => {
+const ProtfolioSection:React.FC<BoxProps> = ({className,...props}) => {
   return (
-    <ProtfolioSectionWrapper className="cmn_gap">
+    <ProtfolioSectionWrapper className={clsx("cmn_gap",className)} {...props}>
       <Container fixed>
         <CommonHeading
           sectionNameDots
