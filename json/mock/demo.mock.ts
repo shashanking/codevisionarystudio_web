@@ -39,19 +39,19 @@ export const whyListItem: whyListProps[] = [
     title: "Customized Strategies",
     description:
       "We create bespoke solutions that align with your specific business objectives, ensuring that every project is unique and impactful."
+  },
+  {
+    listNumber: 2,
+    title: "Collaborative Process",
+    description:
+      "We work closely with you throughout the entire process to ensure your vision is realized and expectations are exceeded."
+  },
+  {
+    listNumber: 3,
+    title: "Proven Track Record",
+    description:
+      "Our portfolio of successful projects and satisfied clients speaks to our commitment to excellence and our ability to deliver results."
   }
-  // {
-  //   listNumber: 2,
-  //   title: "Collaborative Process",
-  //   description:
-  //     "We work closely with you throughout the entire process to ensure your vision is realized and expectations are exceeded."
-  // },
-  // {
-  //   listNumber: 3,
-  //   title: "Proven Track Record",
-  //   description:
-  //     "Our portfolio of successful projects and satisfied clients speaks to our commitment to excellence and our ability to deliver results."
-  // }
 ];
 
 export const testimonialItem: testimonialProps[] = [

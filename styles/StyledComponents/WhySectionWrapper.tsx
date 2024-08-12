@@ -37,6 +37,7 @@ export const WhySectionWrapper = styled(Box)`
       }
     }
     .why_list {
+      position: relative;
       li {
         display: flex;
         align-items: center;
@@ -44,6 +45,9 @@ export const WhySectionWrapper = styled(Box)`
         border-radius: 90px;
         padding: 18px 36px;
         min-height: 150px;
+        position: absolute;
+        left: 0;
+        top: 0;
         :not(:last-child) {
           margin-bottom: 20px;
         }

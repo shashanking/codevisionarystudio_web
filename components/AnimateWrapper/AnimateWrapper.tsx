@@ -11,6 +11,8 @@ import WhySection from "@/components/WhySection/WhySection";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import ImageSecOne from "../ImageSecOne/ImageSecOne";
+import ImageSecTwo from "../ImageSecTwo/ImageSecTwo";
 
 const AnimateWrapperStyle = styled(Box)`
   position: relative;
@@ -46,23 +48,40 @@ const AnimateWrapper = () => {
     gsap.set(".mbl_img3", {
       right: "-45px",
       top: "-40px",
-      opacity: 0
+      opacity: 0,
+      y: "-100vh"
     });
     gsap.set(".mbl_img4", {
       right: "60px",
       bottom: "290px",
-      opacity: 0
+      opacity: 0,
+      y: "-100vh"
     });
 
     gsap.set(".mbl_img1", {
       left: "-100px",
       top: "170px",
-      opacity: 0
+      opacity: 0,
+      y: "-100vh"
     });
 
     gsap.set(".mbl_img2", {
       left: "60px",
       bottom: "230px",
+      opacity: 0,
+      y: "-100vh"
+    });
+
+    gsap.set(".switch_list1", {
+      y: "0",
+      opacity: 1
+    });
+    gsap.set(".switch_list2", {
+      y: "100px",
+      opacity: 0
+    });
+    gsap.set(".switch_list3", {
+      y: "100px",
       opacity: 0
     });
 
@@ -85,6 +104,14 @@ const AnimateWrapper = () => {
     gsap.set(".img7", {
       y: "-30vh",
       x: "100vw"
+    });
+
+    gsap.set([".img3", ".img4", ".img6", ".img8"], {
+      y: "100vh"
+    });
+
+    gsap.set([".img9", ".img10", ".img6", ".img11"], {
+      y: "100vh"
     });
 
     const tl = gsap.timeline({
@@ -152,27 +179,189 @@ const AnimateWrapper = () => {
         "-=1"
       )
       .to(
+        ".about_heading",
+        {
+          y: "-50vh"
+        },
+        "+=.25"
+      )
+      .to(
+        ".about_heading_stack",
+        {
+          y: "-50vh"
+        },
+        "-=.95"
+      )
+
+      .to(
+        [".img2", ".img7", ".img5", ".img1"],
+        {
+          y: "-100vh"
+        },
+        "-=.9"
+      )
+
+      .to(
         ".about_sec",
         {
           opacity: 0,
           pointerEvents: "none"
         },
-        "+=.25"
+        "-=.95"
       )
+      .to(
+        ".image_one_sec",
+        {
+          opacity: 1,
+          pointerEvents: "inherit"
+        },
+        "-=1"
+      )
+      .to(
+        ".img3",
+        {
+          y: "0"
+        },
+        "-=.9"
+      )
+      .to(
+        ".img4",
+        {
+          y: "0"
+        },
+        "-=.9"
+      )
+      .to(
+        ".img6",
+        {
+          y: 0
+        },
+        "-=.9"
+      )
+      .to(
+        ".img8",
+        {
+          y: 0
+        },
+        "-=.9"
+      )
+      .to(
+        ".image_one_sec",
+        {
+          opacity: 0,
+          pointerEvents: "none"
+        },
+        "+=1"
+      )
+      .to(
+        ".image_two_sec",
+        {
+          opacity: 1,
+          pointerEvents: "inherit"
+        },
+        "-=1"
+      )
+      .to(
+        ".img3",
+        {
+          y: "-100vh"
+        },
+        "-=.9"
+      )
+      .to(
+        ".img4",
+        {
+          y: "-100vh"
+        },
+        "-=.9"
+      )
+      .to(
+        ".img6",
+        {
+          y: "-40vh"
+        },
+        "-=.9"
+      )
+      .to(
+        ".img8",
+        {
+          y: "-100vh"
+        },
+        "-=.9"
+      )
+      .to(
+        ".img9",
+        {
+          y: "25vh"
+        },
+        "-=1"
+      )
+      .to(
+        ".img10",
+        {
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".img11",
+        {
+          y: "0"
+        },
+        "-=1"
+      )
+
       .to(
         ".we_sec",
         {
           opacity: 1,
           pointerEvents: "inherit"
         },
-        "-=.25"
+        "+=1"
+      )
+      .to(
+        ".image_two_sec",
+        {
+          opacity: 0,
+          pointerEvents: "none"
+        },
+        "-=1"
+      )
+
+      .to(
+        ".img6",
+        {
+          y: "-100vh"
+        },
+        "-=1"
+      )
+      .to(
+        ".img9",
+        {
+          y: "-100vh"
+        },
+        "-=1"
+      )
+      .to(
+        ".img10",
+        {
+          y: "-100vh"
+        },
+        "-=1"
+      )
+      .to(
+        ".img11",
+        {
+          y: "-100vh"
+        },
+        "-=1"
       )
       .to(
         ".weBck_lyr",
         {
           opacity: 1
         },
-        "-=1"
+        "-=.25"
       )
       .to(
         ".service_sec",
@@ -180,7 +369,7 @@ const AnimateWrapper = () => {
           opacity: 1,
           pointerEvents: "inherit"
         },
-        "+=.25"
+        "+=1"
       )
       .to(
         ".we_sec",
@@ -196,7 +385,7 @@ const AnimateWrapper = () => {
           y: 0,
           opacity: 1
         },
-        "-=1"
+        "-=.25"
       )
       .to(
         ".gallery",
@@ -212,7 +401,7 @@ const AnimateWrapper = () => {
           opacity: 1,
           pointerEvents: "inherit"
         },
-        "+=.5"
+        "+=1"
       )
       .to(
         ".service_sec",
@@ -241,23 +430,93 @@ const AnimateWrapper = () => {
       .to(
         [".mbl_img1", ".mbl_img2", ".mbl_img3", ".mbl_img4"],
         {
-          opacity: 1
+          opacity: 1,
+          y: "0"
         },
-        "-=.5"
+        "+=1"
+      )
+      .to(
+        ".switch_list1",
+        {
+          opacity: 0,
+          y: "-100px"
+        },
+        "-=1"
+      )
+      .to(
+        ".switch_list2",
+        {
+          opacity: 1,
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".mbl_img3",
+        {
+          left: "50%",
+          transform: "translateX(-50%)",
+          top: "65px"
+        },
+        "+=1"
+      )
+      .to(
+        ".mbl_img1",
+        {
+          left: "50%",
+          transform: "translateX(-50%)",
+          top: "180px"
+        },
+        "-=1"
+      )
+      .to(
+        ".mbl_img2",
+        {
+          left: "50%",
+          transform: "translateX(-50%)",
+          bottom: "260px"
+        },
+        "-=1"
+      )
+      .to(
+        ".mbl_img4",
+        {
+          left: "50%",
+          transform: "translateX(-50%)",
+          bottom: "320px"
+        },
+        "-=1"
+      )
+      .to(
+        ".switch_list2",
+        {
+          opacity: 0,
+          y: "-100px"
+        },
+        "-=1"
+      )
+      .to(
+        ".switch_list3",
+        {
+          opacity: 1,
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".why_sec",
+        {
+          opacity: 0,
+          pointerEvents: "none",
+          y: "-100vh"
+        },
+        "+=1"
       )
       .to(
         ".portfolio_sec",
         {
           opacity: 1,
           pointerEvents: "inherit"
-        },
-        "+=1"
-      )
-      .to(
-        ".why_sec",
-        {
-          opacity: 0,
-          pointerEvents: "none"
         },
         "-=1"
       )
@@ -273,7 +532,7 @@ const AnimateWrapper = () => {
         ".portfolio_sec",
         {
           opacity: 0,
-          pointerEvents: "none"
+          pointerEvents: "inherit"
         },
         "-=1"
       )
@@ -289,9 +548,9 @@ const AnimateWrapper = () => {
         ".team_sec",
         {
           opacity: 0,
-          pointerEvents: "none"
+          pointerEvents: "inherit"
         },
-        "-=0.2"
+        "-=1"
       );
 
     ScrollTrigger.create({
@@ -309,6 +568,8 @@ const AnimateWrapper = () => {
     <AnimateWrapperStyle ref={mainRef}>
       <BannerSection className="banner_sec" />
       <AboutSection className="about_sec" />
+      <ImageSecOne className="image_one_sec" />
+      <ImageSecTwo className="image_two_sec" />
       <WeSection className="we_sec" />
       <ServiceSection className="service_sec" />
       <WhySection className="why_sec" />

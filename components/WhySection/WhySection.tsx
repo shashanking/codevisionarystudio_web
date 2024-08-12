@@ -71,7 +71,7 @@ const WhySection:React.FC<BoxProps> = ({className,...props}) => {
 
               <List className="why_list">
                 {whyListItem.map((item, index) => (
-                  <ListItem disablePadding key={index}>
+                  <ListItem disablePadding key={index} className={`switch_list${index + 1}`}>
                     <Box className="number">{item.listNumber}</Box>
                     <Box className="content">
                       <Typography variant="h3">{item.title}</Typography>

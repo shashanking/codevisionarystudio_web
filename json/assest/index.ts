@@ -35,7 +35,7 @@ export default {
   img5:"/assets/images/img5.jpeg",
   img6:"/assets/images/img6.jpeg",
   img7:"/assets/images/img7.jpeg",
-  img8:"/assets/images/img8 .jpeg",
+  img8:"/assets/images/img8.jpeg",
   img9:"/assets/images/img9.jpeg",
   img10:"/assets/images/img10.jpeg",
 };
