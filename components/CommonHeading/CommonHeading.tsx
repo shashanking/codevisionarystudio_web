@@ -12,11 +12,12 @@ const CommonHeading:React.FC<CommonHeadingProps & BoxProps> = ({
   description,
   textAlignLeft,
   sectionNameDots,
+  maxWidthBlock,
   className,
   ...props
 }) => {
   return (
-    <CommonHeadingWrapper className={clsx(`${textAlignLeft ? "textAlignLeft" : ""}`,className)}>
+    <CommonHeadingWrapper className={clsx(`${textAlignLeft ? "textAlignLeft" : ""}`,className)} maxWidthBlock={maxWidthBlock}>
       <Box className="section_name">
         {sectionNameDots ? (
           <i>

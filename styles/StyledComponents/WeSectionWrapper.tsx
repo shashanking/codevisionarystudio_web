@@ -28,4 +28,28 @@ export const WeSectionWrapper = styled(Box)`
     z-index: -1;
     opacity: 0;
   }
+
+  .design_txt {
+    display: flex;
+    flex-direction: column;
+    figure {
+      margin-bottom: 80px;
+      position: relative;
+      line-height: 0;
+      font-size: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      height: 130px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:nth-child(even){
+        justify-content: flex-end;
+      }
+      img{
+        position: absolute;
+      }
+    }
+  }
 `;

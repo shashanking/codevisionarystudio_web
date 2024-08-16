@@ -5,6 +5,9 @@ import { Box, styled } from "@mui/material";
 export const TeamWrapper = styled(Box)`
   position: relative;
   overflow: hidden;
+  .team_sec_cmn_heading {
+    overflow: hidden;
+  }
   &:before {
     content: "";
     position: absolute;
@@ -23,9 +26,9 @@ export const TeamWrapper = styled(Box)`
     margin-top: 20px;
   }
   .teamCard {
-    &:nth-child(even) {
+    /* &:nth-child(even) {
       margin-top: 48px;
-    }
+    } */
   }
 `;
 

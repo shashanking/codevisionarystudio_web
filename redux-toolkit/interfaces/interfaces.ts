@@ -23,6 +23,7 @@ export interface CommonHeadingProps {
   description?: string;
   textAlignLeft?: boolean;
   sectionNameDots?: boolean;
+  maxWidthBlock?:number
 }
 
 export interface whyListProps {

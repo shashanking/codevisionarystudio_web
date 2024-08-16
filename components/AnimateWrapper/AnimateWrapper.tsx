@@ -114,6 +114,58 @@ const AnimateWrapper = () => {
       y: "100vh"
     });
 
+    gsap.set(".roll_txt_heading h3", {
+      opacity: 0
+    });
+
+    gsap.set(".roll_txt_heading h3:nth-child(2)", {
+      y: "50px"
+    });
+    gsap.set(".roll_txt_heading h3:nth-child(3)", {
+      y: "50px"
+    });
+    gsap.set(".roll_txt_heading h3:nth-child(4)", {
+      y: "50px"
+    });
+
+    gsap.set(".roll_txt_content p", {
+      opacity: 0
+    });
+
+    gsap.set(".roll_txt_content p:nth-child(2)", {
+      y: "150px"
+    });
+    gsap.set(".roll_txt_content p:nth-child(3)", {
+      y: "150px"
+    });
+    gsap.set(".roll_txt_content p:nth-child(4)", {
+      y: "150px"
+    });
+
+    gsap.set([".gallery1", ".gallery2", ".gallery3"], {
+      y: "100vh"
+    });
+
+    gsap.set(".gallery4", {
+      opacity: 0
+    });
+
+    gsap.set([".design_txt3 img", ".design_txt1 img"], {
+      x: "-100%"
+    });
+    gsap.set(".design_txt2 img", {
+      x: "100%"
+    });
+
+    gsap.set(".teamGrid", {
+      x: "100%",
+      opacity: 0
+    });
+
+    gsap.set(".team_sec_cmn_heading p", {
+      y: "200px"
+    });
+
     const tl = gsap.timeline({
       defaults: {
         duration: 1,
@@ -363,6 +415,62 @@ const AnimateWrapper = () => {
         },
         "-=.25"
       )
+
+      .to(
+        ".design_txt3 img",
+        {
+          y: "0",
+          x: "0"
+        },
+        "+=.5"
+      )
+      .to(
+        ".design_txt2 img",
+        {
+          y: "0",
+          x: "0%"
+        },
+        "+=.5"
+      )
+      .to(
+        ".design_txt3 img",
+        {
+          y: "0",
+          x: "50%"
+        },
+        "-=1"
+      )
+      .to(
+        ".design_txt1 img",
+        {
+          y: "0",
+          x: "0"
+        },
+        "+=.5"
+      )
+      .to(
+        ".design_txt2 img",
+        {
+          y: "0",
+          x: "-25%"
+        },
+        "-=1"
+      )
+      .to(
+        ".design_txt1 img",
+        {
+          y: "0",
+          x: "50%"
+        },
+        "+=.5"
+      )
+      .to(
+        ".we_sec",
+        {
+          y: "-20vh"
+        },
+        "-=1"
+      )
       .to(
         ".service_sec",
         {
@@ -520,6 +628,246 @@ const AnimateWrapper = () => {
         },
         "-=1"
       )
+
+      .to(
+        ".gallery1",
+        {
+          y: "0"
+        },
+        "+=1"
+      )
+      .to(
+        ".gallery2",
+        {
+          y: "0"
+        },
+        "+=.5"
+      )
+      .to(
+        ".gallery3",
+        {
+          y: "0"
+        },
+        "+=.5"
+      )
+      .to(
+        ".gallery1",
+        {
+          x: "200%"
+        },
+        "+=.5"
+      )
+      .to(
+        ".gallery2",
+        {
+          x: "100%"
+        },
+        "-=.85"
+      )
+      .to(
+        ".gallery4",
+        {
+          opacity: 1
+        },
+        "-=1"
+      )
+
+      .to(
+        ".roll_txt_heading h3:nth-child(1)",
+        {
+          opacity: 0.25
+        },
+        "+=.5"
+      )
+      .to(
+        ".roll_txt_content p",
+        {
+          opacity: 0.25
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(1)",
+        {
+          y: "-50px"
+        },
+        "+=.5"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(2)",
+        {
+          y: "0",
+          opacity: 0.5
+        },
+        "-=.5"
+      )
+      .to(
+        ".roll_txt_content p",
+        {
+          opacity: 0.5
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(2)",
+        {
+          y: "-50px"
+        },
+        "+=.5"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(3)",
+        {
+          y: "0",
+          opacity: 0.75
+        },
+        "-=.5"
+      )
+      .to(
+        ".roll_txt_content p",
+        {
+          opacity: 0.75
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(3)",
+        {
+          y: "-50px"
+        },
+        "+=.5"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(4)",
+        {
+          y: "0",
+          opacity: 1
+        },
+        "-=.5"
+      )
+      .to(
+        [
+          ".roll_txt_content p",
+          ".roll_txt_heading h3:nth-child(3)",
+          ".roll_txt_heading h3:nth-child(2)",
+          ".roll_txt_heading h3:nth-child(1)"
+        ],
+        {
+          opacity: 1
+        },
+        "-=1"
+      )
+
+      .to(
+        ".roll_txt_heading h3:nth-child(4)",
+        {
+          y: "50px",
+          opacity: 1
+        },
+        "+=.5"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(3)",
+        {
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_content p:nth-child(1)",
+        {
+          y: "-150px"
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_content p:nth-child(2)",
+        {
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".gallery1",
+        {
+          y: "-100vh"
+        },
+        "-=1"
+      )
+
+      .to(
+        ".roll_txt_heading h3:nth-child(3)",
+        {
+          y: "50px",
+          opacity: 1
+        },
+        "+=.5"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(2)",
+        {
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_content p:nth-child(2)",
+        {
+          y: "-150px"
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_content p:nth-child(3)",
+        {
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".gallery2",
+        {
+          y: "-100vh"
+        },
+        "-=1"
+      )
+
+      .to(
+        ".roll_txt_heading h3:nth-child(2)",
+        {
+          y: "50px",
+          opacity: 1
+        },
+        "+=.5"
+      )
+      .to(
+        ".roll_txt_heading h3:nth-child(1)",
+        {
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_content p:nth-child(3)",
+        {
+          y: "-150px"
+        },
+        "-=1"
+      )
+      .to(
+        ".roll_txt_content p:nth-child(4)",
+        {
+          y: "0"
+        },
+        "-=1"
+      )
+      .to(
+        ".gallery3",
+        {
+          y: "-100vh"
+        },
+        "-=1"
+      )
       .to(
         ".team_sec",
         {
@@ -532,10 +880,33 @@ const AnimateWrapper = () => {
         ".portfolio_sec",
         {
           opacity: 0,
-          pointerEvents: "inherit"
+          pointerEvents: "none"
         },
         "-=1"
       )
+      .to(
+        ".teamGrid",
+        {
+          x: "0",
+          opacity: 1
+        },
+        "+=.25"
+      )
+      .to(
+        ".team_sec_cmn_heading p",
+        {
+          y: "0"
+        },
+        "+=.5"
+      )
+      .to(
+        ".teamCard:nth-child(even)",
+        {
+          marginTop: "40px"
+        },
+        "-=1"
+      )
+
       .to(
         ".testimonial_sec",
         {
@@ -544,14 +915,37 @@ const AnimateWrapper = () => {
         },
         "+=1"
       )
+
       .to(
         ".team_sec",
         {
           opacity: 0,
-          pointerEvents: "inherit"
+          pointerEvents: "none"
         },
         "-=1"
-      );
+      )
+
+      .to(
+        ".testimonial_sec",
+        {
+
+        },
+        "+=1"
+      )
+      .to(
+        ".testimonial_sec",
+        {
+
+        },
+        "+=1"
+      )
+      .to(
+        ".testimonial_sec",
+        {
+
+        },
+        "+=1"
+      )
 
     ScrollTrigger.create({
       trigger: mainRef.current,

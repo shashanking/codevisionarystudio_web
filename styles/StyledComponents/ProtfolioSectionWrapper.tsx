@@ -29,8 +29,26 @@ export const ProtfolioSectionWrapper = styled(Box)`
     background: ${primaryColors.color007fa9};
     opacity: 0.2;
     filter: blur(139.545px);
-
     z-index: -1;
+  }
+  .cmn_gallery_img{
+    position: absolute;
+    top: 0;
+    width: calc(100% / 3);
+    height: 100vh;
+    z-index: 9;
+    &.gallery2{
+      left: 33.33%;
+      z-index: 8;
+    }
+    &.gallery3{
+      right: 0;
+      z-index: 7;
+    }
+    &.gallery4{
+      right: 0;
+      z-index: 6;
+    }
   }
   .port_text {
     span {
@@ -73,6 +91,35 @@ export const ProtfolioSectionWrapper = styled(Box)`
           background: transparent;
         }
       }
+    }
+  }
+
+  .roll_txt_heading{
+    position: relative;
+    min-height: 50px;
+    overflow: hidden;
+    margin-bottom: 70px;
+    h3{
+      font-size: 48px;
+      font-weight: 700;
+      color: ${primaryColors?.white};
+      position: absolute;
+      left: 0;
+      top: 0;
+   
+    }
+  }
+  .roll_txt_content{
+    position: relative;
+    min-height: 150px;
+    overflow: hidden;
+    p{
+      font-size: 20px;
+      color: ${primaryColors?.white};
+      max-width: 785px;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
   }
 `;

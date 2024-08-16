@@ -2,7 +2,9 @@ import { primaryColors } from "@/themes/_muiPalette";
 import { earth_orbiter, montserrat } from "@/themes/_muiTheme";
 import { Box, styled } from "@mui/material";
 
-export const CommonHeadingWrapper = styled(Box)`
+export const CommonHeadingWrapper = styled(Box, {
+  shouldForwardProp: (data) => data !== "maxWidthBlock"
+})<{ maxWidthBlock?: number }>`
   text-align: center;
   :not(:last-child) {
     margin-bottom: 40px;
@@ -48,5 +50,7 @@ export const CommonHeadingWrapper = styled(Box)`
     font-weight: 400;
     font-family: ${montserrat.style.fontFamily};
     color: ${primaryColors.white};
+    max-width: ${({maxWidthBlock}) => maxWidthBlock ? `${maxWidthBlock}px` : ''};
+    margin:0 auto;
   }
 `;

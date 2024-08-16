@@ -3,6 +3,8 @@ import { montserrat } from "@/themes/_muiTheme";
 import { Box, styled } from "@mui/material";
 
 export const TestimonialSectionWrapper = styled(Box)`
+display: flex;
+align-items: center;
   .testiRgt_col {
     padding-left: 100px;
   }

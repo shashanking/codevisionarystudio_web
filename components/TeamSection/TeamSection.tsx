@@ -17,6 +17,8 @@ const TeamSection = ({ className }: TeamSectionProps) => {
           sectionName="Our Team"
           title="MEAT OUR TALENTED TEAM"
           description="Meet the passionate professionals who drive the success of Code Visionary Studios. Our team's diverse backgrounds and expertise come together to create powerful, integrated solutions that help our clients thrive in the digital world."
+          maxWidthBlock={1217}
+          className="team_sec_cmn_heading"
         />
         <Grid container spacing={2} className="teamGrid">
           {teamMembers.map((item, index) => (
