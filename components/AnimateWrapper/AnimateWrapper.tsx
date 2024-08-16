@@ -925,32 +925,14 @@ const AnimateWrapper = () => {
         "-=1"
       )
 
-      .to(
-        ".testimonial_sec",
-        {
-
-        },
-        "+=1"
-      )
-      .to(
-        ".testimonial_sec",
-        {
-
-        },
-        "+=1"
-      )
-      .to(
-        ".testimonial_sec",
-        {
-
-        },
-        "+=1"
-      )
+      .to(".testimonial_sec", {}, "+=1")
+      .to(".testimonial_sec", {}, "+=1")
+      .to(".testimonial_sec", {}, "+=1");
 
     ScrollTrigger.create({
       trigger: mainRef.current,
       start: "top top",
-      end: "350%",
+      end: "850%",
       scrub: 2,
       pin: true,
       markers: false,
