@@ -200,8 +200,7 @@ const Footer = () => {
   });
 
   const onSubmit = async (values: FooterSchemaData) => {
-    // const mailText = `Name: ${values.name}\n  Email: ${values.email}\nPhone:${values.phone} \nSubject: ${values.subject}`;
-    const response = await axios("/api/send-email");
+    const response = await axios.post("/api/send-email", values);
     if (response?.status === 200) {
       toast.success("Application Submitted Successfully.");
     } else {
@@ -371,10 +370,10 @@ const Footer = () => {
                   </ListItem>
                   <ListItem disablePadding>
                     <Link
-                      href="mailto:Codevisionary@gmail.com"
+                      href="mailto:codevisionary@gmail.com"
                       className="ftr_mail"
                     >
-                      Codevisionary@gmail.com
+                      codevisionary@gmail.com
                     </Link>
                   </ListItem>
                 </List>

@@ -1,8 +1,7 @@
-/** @type {import('next').NextConfig} */
 const withPWA = require("next-pwa");
 const path = require("path");
 const runtimeCaching = require("next-pwa/cache");
-
+/** @type {import('next').NextConfig} */
 module.exports = withPWA({
   pwa: {
     dest: "public",
@@ -11,7 +10,8 @@ module.exports = withPWA({
     runtimeCaching,
     disable: process.env.NODE_ENV === "development"
   },
-  reactStrictMode: true,
+
+  reactStrictMode: false,
   trailingSlash: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")]
@@ -29,6 +29,7 @@ module.exports = withPWA({
   compiler: {
     removeConsole: process.env.NODE_ENV === "production"
   },
+  output: "export",
   env: {
     NEXT_APP_BASE_URL: process.env.NEXT_APP_BASE_URL
   },
