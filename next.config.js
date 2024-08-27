@@ -10,14 +10,14 @@ module.exports = withPWA({
     runtimeCaching,
     disable: process.env.NODE_ENV === "development"
   },
-
   reactStrictMode: false,
   trailingSlash: true,
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")]
   },
   images: {
-    domains: ["career-utility.dedicateddevelopers.us"]
+    domains: ["career-utility.dedicateddevelopers.us"],
+    unoptimized: true
   },
   swcMinify: true,
   compress: true,
