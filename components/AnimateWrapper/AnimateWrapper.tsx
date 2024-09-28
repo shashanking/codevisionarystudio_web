@@ -16,7 +16,7 @@ import ImageSecTwo from "../ImageSecTwo/ImageSecTwo";
 
 const AnimateWrapperStyle = styled(Box)`
   position: relative;
-  height: 100vh;
+  height: 100%;
 `;
 
 gsap.registerPlugin(ScrollTrigger);
@@ -941,18 +941,33 @@ const AnimateWrapper = () => {
   });
 
   return (
-    <AnimateWrapperStyle ref={mainRef}>
-      <BannerSection className="banner_sec" />
-      <AboutSection className="about_sec" />
-      <ImageSecOne className="image_one_sec" />
-      <ImageSecTwo className="image_two_sec" />
-      <WeSection className="we_sec" />
-      <ServiceSection className="service_sec" />
-      <WhySection className="why_sec" />
-      <ProtfolioSection className="portfolio_sec" />
-      <TeamSection className="team_sec" />
-      <TestimonialSection className="testimonial_sec" />
-    </AnimateWrapperStyle>
+    <>
+      <div style={{
+        height:'100vh',
+        position:'relative'
+      }} ref={mainRef} className="desktop__topMostWrapper">
+        <AnimateWrapperStyle
+        //  ref={mainRef}
+         >
+          <BannerSection className="banner_sec" />
+          <AboutSection className="about_sec" />
+          <ImageSecOne className="image_one_sec" />
+          <ImageSecTwo className="image_two_sec" />
+          <WeSection className="we_sec" />
+          <ServiceSection className="service_sec" />
+          <WhySection className="why_sec" />
+          <ProtfolioSection className="portfolio_sec" />
+          <TeamSection className="team_sec" />
+          <TestimonialSection className="testimonial_sec" />
+        </AnimateWrapperStyle>
+      </div>
+
+      {/* for mobile start */}
+      <div className="mobile__topMostWrapper">
+        <BannerSection className="banner_secs" />
+        <AboutSection className="about_sec" />
+      </div>
+    </>
   );
 };
 

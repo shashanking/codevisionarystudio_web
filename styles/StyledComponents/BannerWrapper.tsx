@@ -101,4 +101,25 @@ export const BannerWrapper = styled(Box)`
       font-size: 24px;
     }
   }
+
+  @media (min-width: 1280px) {
+    .contentWrapper {
+      .content_box {
+        h1 {
+          font-size: 70px !important;
+        }
+      }
+    }
+  }
+  @media (min-width: 1536px) {
+    .contentWrapper {
+      .content_box {
+        h1 {
+          font-size: 95px !important;
+        }
+      }
+    }
+
+
+  }
 `;
