@@ -391,6 +391,9 @@ body {
   .mobileViewMainWrapper {
     display: none;
   }
+  .weSection__mobileMianOuterWrapper{
+    display: none;
+  }
 }
 @media (min-width: 1536px) {
   .desktop__topMostWrapper {
@@ -404,6 +407,9 @@ body {
     display: flex !important;
   }
   .mobileViewMainWrapper {
+    display: none;
+  }
+  .weSection__mobileMianOuterWrapper{
     display: none;
   }
 }
