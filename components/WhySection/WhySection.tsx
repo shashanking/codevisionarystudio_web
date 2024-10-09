@@ -66,7 +66,7 @@ const WhySection:React.FC<BoxProps> = ({className,...props}) => {
                 textAlignLeft
                 sectionName="Why us"
                 title="What Makes Us Different"
-                description="Code Visionary Studios stands out for our innovative solutions, personalized service, and proven track record. Our holistic approach to web design, app development, branding, and marketing ensures your business thrives in the digital age."
+                description="Code Visionary Studio stands out for our innovative solutions, personalized service, and proven track record. Our holistic approach to web design, app development, branding, and marketing ensures your business thrives in the digital age."
               />
 
               <List className="why_list">

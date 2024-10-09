@@ -23,7 +23,7 @@ const TestimonialSection = ({ className }: TestimonialSectionProps) => {
                 textAlignLeft
                 sectionName="Testimonials"
                 title="What Our Clients Say"
-                description="Discover how Code Visionary Studios has made a difference for our clients. Our testimonials showcase the positive impact of our web design, app development, branding, and digital marketing services."
+                description="Discover how Code Visionary Studio has made a difference for our clients. Our testimonials showcase the positive impact of our web design, app development, branding, and digital marketing services."
               />
             </Box>
           </Grid>

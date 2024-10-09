@@ -24,14 +24,14 @@ const AboutSection: React.FC<BoxProps> = ({ className, ...props }) => {
               <Grid item md={5.1} xs={12}>
                 <Box className="abt_text">
                   <Typography variant="h2">
-                    WE are Code Visionary Studios
+                    WE are Code Visionary Studio
                   </Typography>
                 </Box>
               </Grid>
               <Grid item md={6.9} xs={12}>
                 <Box className="abt_text_rgt">
                   <Typography>
-                    At Code Visionary Studios, we combine creativity,
+                    At Code Visionary Studio, we combine creativity,
                     technology, and strategic thinking to craft unique digital
                     experiences. Our talented team is committed to delivering
                     high-quality web design, app development, branding, and
@@ -163,7 +163,7 @@ const AboutSectionMobile: React.FC<{}> = () => {
                   }}
                   className="aboutSection__Title"
                 >
-                  WE are Code Visionary Studios
+                  WE are Code Visionary Studio
                 </h3>
                 <p
                   style={{
@@ -171,7 +171,7 @@ const AboutSectionMobile: React.FC<{}> = () => {
                   }}
                   className="aboutSection__smallInfo"
                 >
-                  At Code Visionary Studios, we combine creativity, technology,
+                  At Code Visionary Studio, we combine creativity, technology,
                   and strategic thinking to craft unique digital experiences.
                   Our talented team is committed to delivering high-quality web
                   design, app development, branding, and marketing services
