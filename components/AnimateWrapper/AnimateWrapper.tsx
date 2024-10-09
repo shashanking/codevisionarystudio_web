@@ -966,6 +966,7 @@ const AnimateWrapper = () => {
       <div className="mobile__topMostWrapper">
         <BannerSection className="banner_secs" />
         <AboutSection className="about_sec" />
+        <WeSection className="we_sec" />
       </div>
     </>
   );

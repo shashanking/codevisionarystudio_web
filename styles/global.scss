@@ -310,11 +310,61 @@ body {
           .aboutSection__projectImageWrapper {
             overflow: hidden;
 
-
             &:nth-child(even) {
               margin-top: 30px;
             }
-            
+          }
+        }
+      }
+    }
+  }
+
+  // WeSection start...
+
+  .desktopMain__wrapper {
+    display: none;
+  }
+  .weSection__mobileMianOuterWrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .weSection__contentMainOuterWrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .weSection__contentWrapper {
+        width: 95%;
+        height: 100%;
+        padding: 20px 10px;
+        margin: 0 auto;
+
+        .weSection__weSmallTag {
+          text-align: center;
+          font-weight: bold;
+          font-size: 32px;
+          color: white;
+        }
+
+        .weSection__dddMainWrapper{
+          height: 65%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-evenly;
+          align-items: center;
+          gap: 20px;
+          margin: 50px 0;
+
+          .design__wapper{
+            position: relative;
+            width: 75%;
+            height: 60px;
           }
         }
       }
