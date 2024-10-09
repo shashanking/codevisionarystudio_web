@@ -16,7 +16,7 @@ const TeamSection = ({ className }: TeamSectionProps) => {
           sectionNameDots
           sectionName="Our Team"
           title="MEAT OUR TALENTED TEAM"
-          description="Meet the passionate professionals who drive the success of Code Visionary Studios. Our team's diverse backgrounds and expertise come together to create powerful, integrated solutions that help our clients thrive in the digital world."
+          description="Meet the passionate professionals who drive the success of Code Visionary Studio. Our team's diverse backgrounds and expertise come together to create powerful, integrated solutions that help our clients thrive in the digital world."
           maxWidthBlock={1217}
           className="team_sec_cmn_heading"
         />

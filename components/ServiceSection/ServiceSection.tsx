@@ -14,7 +14,7 @@ const ServiceSection:React.FC<BoxProps> = ({className,...props}) => {
           sectionNameDots
           sectionName="Our services"
           title="Our Expertise"
-          description="Discover the comprehensive range of IT services we offer at Code Visionary Studios. From web design and app development to branding and digital marketing, our expert team delivers innovative solutions that drive your business forward."
+          description="Discover the comprehensive range of IT services we offer at Code Visionary Studio. From web design and app development to branding and digital marketing, our expert team delivers innovative solutions that drive your business forward."
           className="cmn_heading"
         />
       <Box className="gallery">

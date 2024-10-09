@@ -386,7 +386,7 @@ const Footer = () => {
         <Box className="sliding_heading">
           <Marquee>
             <Box className="sliding_cnt">
-              <span>Code Visionary Studios</span>
+              <span>Code Visionary Studio</span>
               <i>
                 <Image
                   src={assest.sliding_heading_icon}
