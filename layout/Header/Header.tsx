@@ -120,59 +120,61 @@ export default function Header() {
   // }, []);
 
   return (
-    <HeaderWrap
-      sx={{ display: "flex" }}
-      className="main_head"
-      ref={headerElRef}
-    >
-      <AppBar
-        component="nav"
-        position="static"
-        elevation={0}
-        className="headerContainer"
-      >
-        <Container fixed>
-          <Toolbar>
-            <IconButton
-              color="inherit"
-              aria-label="open drawer"
-              edge="start"
-              onClick={handleDrawerToggle}
-              sx={{ mr: 2, display: { sm: "none" } }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Link href="/" className="headerLogo">
-              <Image src={assest.logo} width={240} height={64} alt="Logo" />
-            </Link>
-            {isLoggedIn ? (
-              <Box
-                sx={{ display: { xs: "none", sm: "block" } }}
-                className="navbar"
-              >
-                <CustomButtonPrimary
-                  onClick={handleLogout}
-                  type="button"
-                  variant="contained"
-                  color="primary"
+    <>
+      <div className="Navbar__mainWrapper">
+        <HeaderWrap
+          sx={{ display: "flex" }}
+          className="main_head"
+          ref={headerElRef}
+        >
+          <AppBar
+            component="nav"
+            position="static"
+            elevation={0}
+            className="headerContainer"
+          >
+            <Container fixed>
+              <Toolbar>
+                <IconButton
+                  color="inherit"
+                  aria-label="open drawer"
+                  edge="start"
+                  onClick={handleDrawerToggle}
+                  sx={{ mr: 2, display: { sm: "none" } }}
                 >
-                  <span>Logout</span>
-                </CustomButtonPrimary>
+                  <MenuIcon />
+                </IconButton>
+                <Link href="/" className="headerLogo">
+                  <Image src={assest.logo} width={240} height={64} alt="Logo" />
+                </Link>
+                {isLoggedIn ? (
+                  <Box
+                    sx={{ display: { xs: "none", sm: "block" } }}
+                    className="navbar"
+                  >
+                    <CustomButtonPrimary
+                      onClick={handleLogout}
+                      type="button"
+                      variant="contained"
+                      color="primary"
+                    >
+                      <span>Logout</span>
+                    </CustomButtonPrimary>
 
-                <CustomButtonPrimary
-                  type="button"
-                  variant="contained"
-                  color="primary"
-                >
-                  <span>{userData?.email}</span>
-                </CustomButtonPrimary>
-              </Box>
-            ) : (
-              <Box
-                sx={{ display: { xs: "none", sm: "block" } }}
-                className="navbar"
-              >
-                {/* {navItems.map((item) => (
+                    <CustomButtonPrimary
+                      type="button"
+                      variant="contained"
+                      color="primary"
+                    >
+                      <span>{userData?.email}</span>
+                    </CustomButtonPrimary>
+                  </Box>
+                ) : (
+                  <Box
+                    sx={{ display: { xs: "none", sm: "block" } }}
+                    className="navbar"
+                  >
+                    {/* {navItems.map((item) => (
                   <Link
                     href={item?.route}
                     key={item?.route}
@@ -181,14 +183,14 @@ export default function Header() {
                     {item?.name}
                   </Link>
                 ))} */}
-              </Box>
-            )}
-            <Box className="hdr_rgt">
-              <Button className="hdrmanu_btn">
-                <Typography variant="body1" className="btn_line top" />
-                <Typography variant="body1" className="btn_line bottom" />
-              </Button>
-              {/* <CustomButtonPrimary
+                  </Box>
+                )}
+                <Box className="hdr_rgt">
+                  <Button className="hdrmanu_btn">
+                    <Typography variant="body1" className="btn_line top" />
+                    <Typography variant="body1" className="btn_line bottom" />
+                  </Button>
+                  {/* <CustomButtonPrimary
                 variant="contained"
                 color="primary"
                 className="site-header__btn--cta"
@@ -201,44 +203,69 @@ export default function Header() {
                 </Typography>
                 Contact us
               </CustomButtonPrimary> */}
-              <Button
-                className="site-header__btn--cta"
-                onClick={onClickContactUsButton}
-              >
-                <Typography variant="body1" className="default-text">
-                  Contact Us
-                </Typography>
-                <Typography variant="body1" className="hovered-text">
-                  Don&apos;t be shy
-                </Typography>
-                <Box className="shape-box">
-                  <EastIcon />
+                  <Button
+                    className="site-header__btn--cta"
+                    onClick={onClickContactUsButton}
+                  >
+                    <Typography variant="body1" className="default-text">
+                      Contact Us
+                    </Typography>
+                    <Typography variant="body1" className="hovered-text">
+                      Don&apos;t be shy
+                    </Typography>
+                    <Box className="shape-box">
+                      <EastIcon />
+                    </Box>
+                  </Button>
                 </Box>
-              </Button>
-            </Box>
-          </Toolbar>
-        </Container>
-      </AppBar>
-      <Box component="nav">
-        <Drawer
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", lg: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth
-            }
-          }}
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-      <Toolbar />
-    </HeaderWrap>
+              </Toolbar>
+            </Container>
+          </AppBar>
+          <Box component="nav">
+            <Drawer
+              variant="temporary"
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              ModalProps={{
+                keepMounted: true // Better open performance on mobile.
+              }}
+              sx={{
+                display: { xs: "block", lg: "none" },
+                "& .MuiDrawer-paper": {
+                  boxSizing: "border-box",
+                  width: drawerWidth
+                }
+              }}
+            >
+              {drawer}
+            </Drawer>
+          </Box>
+          <Toolbar />
+        </HeaderWrap>
+      </div>
+      <HeaderMobileView />
+    </>
   );
 }
+
+const HeaderMobileView = () => {
+  return (
+    <>
+      <div className="navBar__mobileMainWrapper">
+        <div className="navBar__mobileWrapper">
+          <div>
+            <Link href="/" className="headerLogos">
+              <Image src={assest.logo} width={160} height={70} alt="Logo" />
+            </Link>
+          </div>
+          <div>
+            <button className="mobile__MenuBTN">
+              <div className="mobile__menuLine lineFirst" />
+              <div className="mobile__menuLine lineSecond" />
+            </button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
