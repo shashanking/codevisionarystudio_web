@@ -967,6 +967,7 @@ const AnimateWrapper = () => {
         <BannerSection className="banner_secs" />
         <AboutSection className="about_sec" />
         <WeSection className="we_sec" />
+        <ServiceSection className="service_sec" />
       </div>
     </>
   );
